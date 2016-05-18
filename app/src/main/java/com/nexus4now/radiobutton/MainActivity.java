@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 SamsungBox.setChecked(isChecked);
                 MotoBox.setChecked(isChecked);
             }
+
             
         }
 
