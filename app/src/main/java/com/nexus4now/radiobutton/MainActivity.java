@@ -46,10 +46,8 @@ public class MainActivity extends AppCompatActivity {
         group1.setOnCheckedChangeListener(listener);
 
         OnBoxListener boxListener = new OnBoxListener();
+
         AllBox.setOnCheckedChangeListener(boxListener);
-        AppleBox.setOnCheckedChangeListener(boxListener);
-        SamsungBox.setOnCheckedChangeListener(boxListener);
-        MotoBox.setOnCheckedChangeListener(boxListener);
 
 
     }
@@ -76,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 SamsungBox.setChecked(isChecked);
                 MotoBox.setChecked(isChecked);
             }
-            else if(Box.getId() == R.id.AppleId){
-                System.out.println("id-->"+ Box.getId());
-            }
+
+
         }
 
 
