@@ -1,7 +1,9 @@
 package com.nexus4now.radiobutton;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -14,6 +16,12 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton B;
     private RadioButton C;
     private RadioButton D;
+
+    private CheckBox AppleBox;
+    private CheckBox SamsungBox;
+    private CheckBox MotoBox;
+    private CheckBox AllBox;
+
 
 
     @Override
@@ -28,8 +36,21 @@ public class MainActivity extends AppCompatActivity {
         C = (RadioButton)findViewById(R.id.CId);
         D = (RadioButton)findViewById(R.id.DId);
 
+        AppleBox = (CheckBox)findViewById(R.id.AppleId);
+        SamsungBox = (CheckBox)findViewById(R.id.SamsungId);
+        MotoBox = (CheckBox)findViewById(R.id.MotoId);
+        AllBox = (CheckBox)findViewById(R.id.AllId);
+
+
         Listener listener = new Listener();
         group1.setOnCheckedChangeListener(listener);
+
+        OnBoxListener boxListener = new OnBoxListener();
+        AllBox.setOnCheckedChangeListener(boxListener);
+        AppleBox.setOnCheckedChangeListener(boxListener);
+        SamsungBox.setOnCheckedChangeListener(boxListener);
+        MotoBox.setOnCheckedChangeListener(boxListener);
+
 
     }
 
@@ -37,9 +58,32 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
+            //C.setChecked(checkedId == R.id.AId);
+            //D.setChecked(checkedId == R.id.BId);
+            C.setChecked(checkedId == A.getId());
+            D.setChecked(checkedId == B.getId());
 
         }
     }
+
+    class OnBoxListener implements CompoundButton.OnCheckedChangeListener{
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            CheckBox Box =(CheckBox)buttonView;
+            if(Box.getId() == R.id.AllId){
+                AppleBox.setChecked(isChecked);
+                SamsungBox.setChecked(isChecked);
+                MotoBox.setChecked(isChecked);
+            }
+            else if(Box.getId() == R.id.AppleId){
+
+            }
+        }
+
+
+    }
+
 
 
 

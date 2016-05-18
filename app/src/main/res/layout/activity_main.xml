@@ -49,4 +49,28 @@
             android:text="D"/>
 
     </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/AppleId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apple"/>
+
+    <CheckBox
+        android:id="@+id/SamsungId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Samsung"/>
+
+    <CheckBox
+        android:id="@+id/MotoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moto"/>
+
+    <CheckBox
+        android:id="@+id/AllId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全选"/>
 </LinearLayout>
