@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 MotoBox.setChecked(isChecked);
             }
             else if(Box.getId() == R.id.AppleId){
-
+                System.out.println("id-->"+ Box.getId());
             }
         }
 
